@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<meta name="description" content="淘宝二手是一个社区化的二手闲置交易平台。让你轻松在这买卖二手闲置；">
+		<meta name="keywords"
+			content="二手奢侈品 二手市场 个人闲置 闲置物品 闲置转让 低碳网购 淘实惠  一键转卖  二手手机 二手数码">
+<title>轻松换</title>
+<link rel="stylesheet" href="./res/css/main.css">
+<link rel="stylesheet" href="./res/css/lrtk.css">
+<link rel="stylesheet" href="./res/css/search.css">
+<script src="./res/js/jquery.js"></script>
+<script src="./res/js/jdt.js"></script>
+<script type="text/javascript">
+	var timeout = 500;
+	var closetimer = 0;
+	var menuitem = 0;
+	function mopen(id) {
+		mcancelclosetime();
+		if (menuitem)
+			menuitem.style.visibility = 'hidden';
+		menuitem = document.getElementById(id);
+		menuitem.style.visibility = 'visible';
+
+	}
+	function mclose() {
+		if (menuitem)
+			menuitem.style.visibility = 'hidden';
+	}
+	function mclosetime() {
+		closetimer = window.setTimeout(mclose, timeout);
+	}
+	function mcancelclosetime() {
+		if (closetimer) {
+			window.clearTimeout(closetimer);
+			closetimer = null;
+		}
+	}
+	document.onclick = mclose;
+</script>
+</head>
+<body>
+	<script>
+		(function() {
+			var a = document.body;
+			window.screen.width > 1024 ? a.className = "w1190"
+					: a.className = "w990"
+		})();
+	</script>
+	<div class="header">
+		<div class="loginstatus">
+			<div class="banner-login">
+				<ul>
+					<li><a href="#">亲，登录</a></li>
+					<li><a href="#">免费注册</a></li>
+				</ul>
+			</div>
+			<div>
+				<ul class="sddm">
+					<li><a href="#" onmouseover="mopen('m1')"
+						onmouseout="mclosetime()">我的账号</a>
+						<div id="m1" onmouseover="mcancelclosetime()"
+							onmouseout="mclosetime()">
+							<a href="#">已买商品</a> <a href="#">我的上新</a> <a href="#">我的优惠</a>
+						</div></li>
+					<li><a href="#" onmouseover="mopen('m2')"
+						onmouseout="mclosetime()">商品收藏</a>
+						<div id="m2" onmouseover="mcancelclosetime()"
+							onmouseout="mclosetime()">
+							<a href="#">卖家收藏</a> <a href="#">宝贝收藏</a>
+						</div></li>
+					<li><a href="#" onmouseover="mopen('m3')"
+						onmouseout="mclosetime()">账号信息</a></li>
+				</ul>
+			</div>
+		</div>
+
+
+
+		<div class="nav clear"></div>
+		<div class="logo">Logo区域</div>
+		<div class="search">
+			<div class="header-search">
+				<div class="header-search-fields">
+					<form action="" method="get">
+						<input class="header-search-box" type="text" name="search" />
+						<button class="search-btn">搜索</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="qrcode">
+			<!-- 二维码微博微信区域 -->
+			<div id="code-site">
+				<a href="#"></a>
+			</div>
+		</div>
+	</div>
+	<div class="main">
+		<div class="category">
+			<div class="left">
+				<!-- 分类区	 -->
+				<div class="t0">
+					<a href="#">二手商品分类</a>
+				</div>
+				<div class="t1">
+					<span><a href="#">闲置数码</a></span> <span class="tt1"> <a
+						href="#">手机</a> | <a href="#">相机</a> | <a href="#">笔记本</a></span>
+				</div>
+				<div class="t1">
+					<span><a href="#">闲置母婴</a></span> <span class="tt1"> <a
+						href="#">童装</a> | <a href="#">宝宝用品</a> | <a href="#">玩具</a></span>
+				</div>
+				<div class="t1">
+					<span><a href="#">家居日用</a></span> <span class="tt1"> <a
+						href="#">家具</a> | <a href="#">家纺</a> | <a href="#">日用</a></span>
+				</div>
+				<div class="t1">
+					<span><a href="#">鞋服佩饰</a></span> <span class="tt1"> <a
+						href="#">女装</a> | <a href="#">男装</a> | <a href="#">佩饰</a></span>
+				</div>
+				<div class="t1">
+					<span><a href="#">闲置母婴</a></span> <span class="tt1"> <a
+						href="#">童装</a> | <a href="#">宝宝用品</a> | <a href="#">玩具</a></span>
+				</div>
+				<div class="t1">
+					<span><a href="#">家居日用</a></span> <span class="tt1"> <a
+						href="#">家具</a> | <a href="#">家纺</a> | <a href="#">日用</a></span>
+				</div>
+				<div class="t1">
+					<span><a href="#">鞋服佩饰</a></span> <span class="tt1"> <a
+						href="#">女装</a> | <a href="#">男装</a> | <a href="#">佩饰</a></span>
+				</div>
+			</div>
+			<div class="focus">
+				<div class="focusbox">
+					<div class="focusimg">
+						<ul class="fimglist clearfix">
+							<li><a href="http://www.lanrentuku.com/"><img
+									src="./res/images/Gintama.jpg" title="懒人图库"></a></li>
+							<li><a href="http://www.lanrentuku.com/"><img
+									src="./res/images/SteinsGate.jpg" title="懒人图库"></a></li>
+							<li><a href="http://www.lanrentuku.com/"><img
+									src="./res/images/Unicorn.jpg" title="懒人图库"></a></li>
+							<li><a href="http://www.lanrentuku.com/"><img
+									src="./res/images/Berserk.jpg" title="懒人图库"></a></li>
+							<li><a href="http://www.lanrentuku.com/"><img
+									src="./res/images/SummerWars.jpg" title="懒人图库"></a></li>
+							<li><a href="http://www.lanrentuku.com/"><img
+									src="./res/images/akito.jpg" title="懒人图库"></a></li>
+							<li><a href="http://www.lanrentuku.com/"><img
+									src="./res/images/EVA.jpg" title="懒人图库"></a></li>
+						</ul>
+					</div>
+					<div class="focustool">
+						<ul class="ftoollist clearfix">
+							<!--通过控制该ul的left值来实现列表的左右移动，增量为931px-->
+							<li class="on"><a href="http://www.lanrentuku.com/"><img
+									src="./res/images/Gintama_s.jpg">
+								<p class="imgname">银魂剧场版</p>
+									<p class="imgshortcat">永远的万事屋</p></a></li>
+							<!--当前项时为该li添加class: on-->
+							<li><a href="http://www.lanrentuku.com/"><img
+									src="./res/images/SteinsGate_s.jpg">
+								<p class="imgname">石头门剧场版</p>
+									<p class="imgshortcat">负荷领域的既视感</p></a></li>
+							<li><a href="http://www.lanrentuku.com/"><img
+									src="./res/images/Unicorn_s.jpg">
+								<p class="imgname">高达UC</p>
+									<p class="imgshortcat">Gundam Unicorn</p></a></li>
+							<li><a href="http://www.lanrentuku.com/"><img
+									src="./res/images/Berserk_s.jpg">
+								<p class="imgname">剑风传奇</p>
+									<p class="imgshortcat">黄金时代</p></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="right">右侧区域</div>
+		</div>
+
+		<div class="nav clear"></div>
+		<div class="show">
+			<ul>
+				<li style="width: 20px;color:white;">宝贝随机推荐</li>
+				<li><a href="#"><img src="" alt="">img111</img></a></li>
+				<li><a href="#"><img src="" alt="">img2</img></a></li>
+				<li><a href="#"><img src="" alt="">img3</img></a></li>
+				<li><a href="#"><img src="" alt="">img4</img></a></li>
+				<li><a href="#"><img src="" alt="">img5</img></a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="footer">&copy;版权所有 侵权必究</div>
+
+</body>
+</html>
