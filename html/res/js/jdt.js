@@ -1,4 +1,4 @@
- jQuery.noConflict();
+
 	jQuery(document).ready(function($){
 		$(".guidelist li").hover(
 			function () {
