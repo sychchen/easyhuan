@@ -27,8 +27,7 @@
 <link rel="stylesheet" href="<%=basePath%>res/css/lrtk.css">
 <link rel="stylesheet" href="<%=basePath%>res/css/search.css">
 <script src="<%=basePath%>res/js/jquery.js"></script>
-<script src="<%=basePath%>res/js/jdt.js"></script><%-- 
-<script src="<%=basePath%>res/js/jframe.js"></script> --%>
+<script src="<%=basePath%>res/js/jdt.js"></script>
 </head>
 <body>
 	<script>
@@ -37,17 +36,17 @@
 			window.screen.width > 1024 ? a.className = "w1190"
 					: a.className = "w990"
 		})();
-	</script> 
+	</script>
 	<div class="header">
 		<div class="loginstatus">
 			<div class="banner-login">
 				<ul>
 					<c:if test="${empty sessionScope.currUser.userName }">
-						<li><a href="<%=basePath%>login.jsp">亲，请登陆</a></li>
+						<li><a href="<%=basePath%>./login.jsp">亲，请登陆</a></li>
 					</c:if>
 					<c:if test="${!empty sessionScope.currUser.userName }">
 						<li><a href="#">欢迎:${sessionScope.currUser.userName }</a></li>
-						<li><a href="<%=basePath%>index.jsp">退出</a></li>
+						<li><a href="<%=basePath%>./index.jsp">退出</a></li>
 					</c:if>
 				</ul>
 			</div>
@@ -80,12 +79,12 @@
 		</div>
 		<div class="uc_op">
 			<ul>
-				<li style="background-color: red;"><a href="<%=basePath%>uc/bought.jsp"
-					target="content">已买宝贝</a></li>
-				<li style="background-color: #00008B;"><a href="<%=basePath%>uc/published.jsp"
-					target="content">已发布宝贝</a></li>
-				<li style="background-color: blue;"><a href="<%=basePath%>uc/contact.jsp"
-					target="content">联系客服</a></li>
+				<li style="background-color: red;"><a
+					href="<%=basePath%>uc/bought.jsp" target="content">已买宝贝</a></li>
+				<li style="background-color: #00008B;"><a
+					href="<%=basePath%>uc/published.jsp" target="content">已发布宝贝</a></li>
+				<li style="background-color: blue;"><a
+					href="<%=basePath%>uc/contact.jsp" target="content">联系客服</a></li>
 			</ul>
 		</div>
 	</div>

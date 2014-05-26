@@ -45,7 +45,7 @@
 			<div class="banner-login">
 				<ul>
 					<c:if test="${empty sessionScope.currUser.userName }">
-						<li><a href="login.jsp" target="mainframe">亲，请登陆</a></li>
+						<li><a href="<%=basePath%>login.jsp">亲，请登陆</a></li>
 					</c:if>
 					<c:if test="${!empty sessionScope.currUser.userName }">
 						<li><a href="<%=basePath%>#">欢迎:${sessionScope.currUser.userName }</a></li>

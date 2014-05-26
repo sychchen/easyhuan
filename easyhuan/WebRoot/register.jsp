@@ -27,8 +27,6 @@
 <link rel="stylesheet" href="<%=basePath%>res/css/search.css">
 <script src="<%=basePath%>res/js/jquery.js"></script>
 <script src="<%=basePath%>res/js/jdt.js"></script>
-<%-- 
-<script src="<%=basePath%>res/js/jframe.js"></script> --%>
 </head>
 
 <body>
@@ -44,7 +42,7 @@
 			<div class="banner-login">
 				<ul>
 					<c:if test="${empty sessionScope.currUser.userName }">
-						<li><a href="login.jsp" target="mainframe">亲，请登陆</a></li>
+						<li><a href="login.jsp">亲，请登陆</a></li>
 					</c:if>
 					<c:if test="${!empty sessionScope.currUser.userName }">
 						<li><a href="<%=basePath%>#">欢迎:${sessionScope.currUser.userName }</a></li>
