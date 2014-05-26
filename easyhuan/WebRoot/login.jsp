@@ -26,8 +26,7 @@
 <link rel="stylesheet" href="<%=basePath%>res/css/lrtk.css">
 <link rel="stylesheet" href="<%=basePath%>res/css/search.css">
 <script src="<%=basePath%>res/js/jquery.js"></script>
-<script src="<%=basePath%>res/js/jdt.js"></script><%-- 
-<script src="<%=basePath%>res/js/jframe.js"></script> --%>
+<script src="<%=basePath%>res/js/jdt.js"></script>
 </head>
 <body>
 	<script>
