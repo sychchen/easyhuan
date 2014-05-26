@@ -80,7 +80,7 @@
 
 		<!-- 		<div class="nav clear"></div> -->
 		<div class="logo">
-			<img src="./img/logo.jpg" />
+			<img src="<%=basePath%>img/logo.jpg" />
 		</div>
 		<div class="search">
 			<div class="header-search">
