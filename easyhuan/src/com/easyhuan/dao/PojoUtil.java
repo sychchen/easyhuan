@@ -27,7 +27,7 @@ public class PojoUtil {
 	}
 
 	// 添加
-	public boolean insertPojo(User pojo) {
+	public boolean insertPojo(Object pojo) {
 		Session session = HibernateUtil.getHibernateSession();
 		Transaction trans = session.beginTransaction();
 		try {
@@ -41,6 +41,24 @@ public class PojoUtil {
 			e.printStackTrace();
 			return false;
 		}
+	}
+
+	// 添加实体并返回Id
+	public Object insertPojoReturnId(Object pojo) {
+		Session session = HibernateUtil.getHibernateSession();
+		Transaction trans = session.beginTransaction();
+		Object key = null;
+		try {
+			trans.begin();
+			session.save(pojo);
+			key = session.getIdentifier(pojo);
+			trans.commit();
+			session.close();
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return key;
 	}
 
 	// 删除
@@ -156,13 +174,12 @@ public class PojoUtil {
 		return list;
 	}
 
-	
-//	public boolean isExistName(String tableName, String userName) {
-//		Session session = HibernateUtil.getHibernateSession();
-//		String hql = "FROM ";
-//		hql = hql.concat(userName);
-//		Query q = session.createQuery(hql);
-//		List list = q.list();
-//		return false;
-//	}
+	// public boolean isExistName(String tableName, String userName) {
+	// Session session = HibernateUtil.getHibernateSession();
+	// String hql = "FROM ";
+	// hql = hql.concat(userName);
+	// Query q = session.createQuery(hql);
+	// List list = q.list();
+	// return false;
+	// }
 }

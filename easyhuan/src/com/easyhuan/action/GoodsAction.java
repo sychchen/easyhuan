@@ -1,100 +1,118 @@
 package com.easyhuan.action;
 
+import java.io.File;
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.List;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
+import org.apache.commons.io.FileUtils;
+import org.apache.struts2.ServletActionContext;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import com.easyhuan.dao.PojoUtil;
+import com.easyhuan.pojo.Comment;
 import com.easyhuan.pojo.Goods;
-import com.easyhuan.pojo.Gpicture;
+import com.easyhuan.pojo.Picture;
 import com.easyhuan.util.HibernateUtil;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class GoodsAction extends ActionSupport {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		// 查询记录
-		// Session session = HibernateUtil.getHibernateSession();
-		// String sql= "from Goods";
-		// Query createquery = session.createQuery(sql);
-		// List<Goods> list = createquery.list();
-		// session.close();
+	private Goods goods;
+	private Picture pictures;
+	private File image;
+	private String imageFileName;
+	private String imageContentType;
 
-		// 查询记录
-		List<Goods> list = PojoUtil.selectPojoList("Goods");
-		for (Goods goods : list) {
-			System.out.println(goods.getGoodsId() + " "
-					+ goods.getGoodsDescription());
+	public File getImage() {
+		return image;
+	}
+
+	public void setImage(File image) {
+		this.image = image;
+	}
+
+	public String getImageFileName() {
+		return imageFileName;
+	}
+
+	public void setImageFileName(String imageFileName) {
+		this.imageFileName = imageFileName;
+	}
+
+	public String getImageContentType() {
+		return imageContentType;
+	}
+
+	public void setImageContentType(String imageContentType) {
+		this.imageContentType = imageContentType;
+	}
+
+	public Goods getGoods() {
+		return goods;
+	}
+
+	public void setGoods(Goods goods) {
+		this.goods = goods;
+	}
+
+	public Picture getPictures() {
+		return pictures;
+	}
+
+	public void setPictures(Picture pictures) {
+		this.pictures = pictures;
+	}
+
+	public Comment getComments() {
+		return comments;
+	}
+
+	public void setComments(Comment comments) {
+		this.comments = comments;
+	}
+
+	private PojoUtil util = new PojoUtil();
+
+	// 发布商品
+	public String newGoods() throws Exception {
+		Calendar calender = Calendar.getInstance();// 使用默认时区和语言环境获得一个日历
+		Date tasktime = calender.getTime();// 将Calendar类型转换成Date类型
+		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 设置日期输出的格式
+		System.out.println(df.format(tasktime));// 格式化输出
+		Timestamp time = Timestamp.valueOf(df.format(tasktime));
+
+		System.out.println("文件名：" + imageFileName);
+		System.out.println("文件类型：" + imageContentType);
+
+		// 得到物理路径
+		String realPath = ServletActionContext.getServletContext().getRealPath(
+				"/images");
+		System.out.println("物理路径：" + realPath);
+
+		File path = new File(realPath);// 创建该路径
+
+		if (!path.exists()) {// 判断是否存在该路径，如果不存在，创建之
+			path.mkdirs();
 		}
+		// 将文件写到服务器硬盘
+		FileUtils.copyFile(image, new File(path, imageFileName));
 
-		List list1 = new ArrayList();
-		list1.add(3);
-		list1.add(4);
-		list1.add(5);
-		boolean flag1 = PojoUtil.deleteMultipePojo("Goods", list1);// 删除多条记录
-
-		// boolean flag1 =PojoUtil.deleteSinglePojoById("Goods", "2");//删除单条记录
-		System.out.println(flag1);
-
-		// 查询记录
-		// List<Goods> list2 = PojoUtil.selectPojo("Goods");
-		// for (Goods goods : list2) {
-		// System.out.println(goods.getGoodsId() + " "
-		// + goods.getGoodsDescription());
-		// PojoUtil.insertGoods(goods);// 添加记录到数据库语句
-		// }
-		// 查询记录
-		// List<Gcomment> list3 = PojoUtil.selectPojoList("Gcomment");
-		// for (Gcomment gcomment : list3) {
-		// PojoUtil.insertPojo(gcomment);//添加记录到数据库语句
-		// gcomment.setGcommentContent("评价评价评价");
-		// PojoUtil.updatePojo(gcomment);//更新记录语句
-		// }
-
+		pictures = new Picture(time, realPath);
+		Set<Picture> pictureSet = new HashSet<Picture>();
+		pictureSet.add(pictures);
+		goods.setPictures(pictureSet);
+		pictures.setGoods(goods);
 		Session session = HibernateUtil.getHibernateSession();
-		Goods goods = (Goods) PojoUtil.selectPojoById(session, "Goods", "10");
-		// System.out.println(goods.getGoodsId() + " " + goods.getGoodsName()
-		// + " " + goods.getGoodsDescription() + " "
-		// + goods.getGoodsPrice() + " " + goods.getGoodsSale());
-		Set<Gpicture> myset = goods.getGpictures();
-
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		for (Gpicture picture : myset) {
-			System.out.println(picture.getGpictureId() + " "
-					+ picture.getGpictureUrl() + " "
-					+ picture.getGpictureTime());
-			// picture.setGpictureUrl("http://localhost:8o80/Easyhuan/img/picture3.png");
-			// PojoUtil.updatePojo(picture);
-			// int id =picture.getGpictureId();
-			// if(id==5){
-			// picture.setGpictureUrl("图片５");
-			// PojoUtil.updatePojo(picture);
-			// PojoUtil.deletePojo(picture);
-			// }
-//			if (picture.getGpictureId() == 6) {
-//				Goods goods1 = picture.getGoods();
-//				System.out.println("pictureId为6的商品的具体的信息如下：");
-//				System.out.println(goods1.getGoodsId() + " "
-//						+ goods1.getGoodsName() + " "
-//						+ goods1.getGoodsDescription() + " "
-//						+ goods1.getGoodsPrice() + " " + goods1.getGoodsSale());
-//			}
-		}
-		// Gpicture picture1 = new Gpicture();
-		// Timestamp time = Timestamp.valueOf("2014-05-20 11:20:27");
-		// Goods goods1 = new Goods();
-		// goods1.setGoodsId(10);
-		// picture1.setGoods(goods1);
-		// picture1.setGpictureTime(time);
-		// picture1.setGpictureUrl("insertPicture添加的图片！");
-		// PojoUtil.insertPojo(picture1);
-
+		Transaction trans = session.beginTransaction();
+		session.save(goods);
+		session.save(pictures);
+		trans.commit();
 		session.close();
+		return SUCCESS;
 	}
 }

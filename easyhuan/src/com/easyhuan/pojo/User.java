@@ -11,7 +11,7 @@ public class User {
 	private String userAddress;
 
 	public Set<Goods> goodses = new HashSet<Goods>();
-	public Set<Gcomment> gcomments = new HashSet<Gcomment>();
+	public Set<Comment> comments = new HashSet<Comment>();
 
 
 	public User() {
@@ -68,12 +68,13 @@ public class User {
 		this.goodses = goodses;
 	}
 
-	public Set<Gcomment> getGcomments() {
-		return gcomments;
+	public Set<Comment> getComments() {
+		return comments;
 	}
 
-	public void setGcomments(Set<Gcomment> gcomments) {
-		this.gcomments = gcomments;
+	public void setComments(Set<Comment> comments) {
+		this.comments = comments;
 	}
+
 
 }

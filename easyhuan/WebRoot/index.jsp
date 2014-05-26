@@ -60,7 +60,8 @@
 						onmouseout="mclosetime()">我的账号</a>
 						<div id="m1" onmouseover="mcancelclosetime()"
 							onmouseout="mclosetime()">
-							<a href="#">已买商品</a> <a href="#">我的上新</a> <a href="#">我的优惠</a>
+							<a href="#">已买商品</a> <a href="<%=basePath%>uc/publishing.jsp" target="content">我的上新</a>
+							<a href="#">我的优惠</a>
 						</div></li>
 					<li><a href="#" onmouseover="mopen('m2')"
 						onmouseout="mclosetime()">商品收藏</a>

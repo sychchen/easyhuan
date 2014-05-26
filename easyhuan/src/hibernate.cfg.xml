@@ -19,11 +19,11 @@
 		org.hibernate.dialect.MySQLDialect
 	</property>
 	<property name="show_sql">true</property>
-	<mapping resource="com/easyhuan/pojo/Gcategory.hbm.xml" />
-	<mapping resource="com/easyhuan/pojo/Gcomment.hbm.xml" />
+	<mapping resource="com/easyhuan/pojo/Category.hbm.xml" />
 	<mapping resource="com/easyhuan/pojo/Goods.hbm.xml" />
-	<mapping resource="com/easyhuan/pojo/Gpicture.hbm.xml" />
+	<mapping resource="com/easyhuan/pojo/Picture.hbm.xml" />
 	<mapping resource="com/easyhuan/pojo/User.hbm.xml" />
+	<mapping resource="com/easyhuan/pojo/Comment.hbm.xml" />
 
 </session-factory>
 

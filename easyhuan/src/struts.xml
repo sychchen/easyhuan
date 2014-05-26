@@ -2,7 +2,8 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
 	<package name="easyhuan" extends="struts-default" namespace="/">
-		<action name="reg" class="com.easyhuan.action.UserAction" method="register">
+		<action name="reg" class="com.easyhuan.action.UserAction"
+			method="register">
 			<result name="success">uc/usercenter.jsp</result>
 			<result name="login">index.jsp</result>
 		</action>
@@ -10,6 +11,11 @@
 			method="login">
 			<result name="success">uc/usercenter.jsp</result>
 			<result name="login">login.jsp</result>
+		</action>
+		<action name="goodspublic" class="com.easyhuan.action.GoodsAction"
+			method="newGoods">
+			<result name="success">uc/published.jsp</result>
+			<result name="republic">uc/publishing.jsp</result>
 		</action>
 	</package>
 </struts>    

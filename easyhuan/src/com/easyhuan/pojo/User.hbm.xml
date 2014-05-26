@@ -28,11 +28,11 @@
             </key>
             <one-to-many class="com.easyhuan.pojo.Goods" />
         </set>
-        <set name="gcomments" inverse="true">
+        <set name="comments" inverse="true">
             <key>
                 <column name="user_id" not-null="true" />
             </key>
-            <one-to-many class="com.easyhuan.pojo.Gcomment" />
+            <one-to-many class="com.easyhuan.pojo.Comment" />
         </set>
     </class>
 </hibernate-mapping>

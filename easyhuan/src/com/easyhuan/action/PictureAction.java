@@ -5,21 +5,23 @@ import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
-import com.easyhuan.pojo.Gpicture;
+import com.easyhuan.pojo.Picture;
 import com.easyhuan.util.HibernateUtil;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class GpictureAction extends ActionSupport {
+public class PictureAction extends ActionSupport {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Session session = HibernateUtil.getHibernateSession();
-		String sql= "from Gpicture";
+		String sql= "from Picture";
 		Query createquery = session.createQuery(sql);
-		List<Gpicture> list = createquery.list();
+		List<Picture> list = createquery.list();
 		session.close();
-		for(Gpicture gpicture:list){
-			System.out.println(gpicture.getGpictureId()+" "+gpicture.getGpictureUrl()+" "+gpicture.getGpictureTime());
+		for(Picture gpicture:list){
+			System.out.println(gpicture.getPictureId() + " "
+					+ gpicture.getPictureUrl() + " "
+					+ gpicture.getPictureTime());
 		}
 	}
 }

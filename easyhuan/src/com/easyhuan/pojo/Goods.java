@@ -11,10 +11,11 @@ public class Goods {
 	private double goodsPrice;
 	private String goodsCategory;
 	private Integer goodsSale;
+	
 	private User user;
 
-	private Set<Gpicture> gpictures = new HashSet<Gpicture>();
-	private Set<Gcomment> gcomments = new HashSet<Gcomment>();
+	private Set<Picture> pictures = new HashSet<Picture>();
+	private Set<Comment> comments = new HashSet<Comment>();
 
 	
 	
@@ -71,20 +72,21 @@ public class Goods {
 		this.goodsSale = goodsSale;
 	}
 
-	public Set<Gpicture> getGpictures() {
-		return gpictures;
+	
+	public Set<Picture> getPictures() {
+		return pictures;
 	}
 
-	public void setGpictures(Set<Gpicture> gpictures) {
-		this.gpictures = gpictures;
+	public void setPictures(Set<Picture> pictures) {
+		this.pictures = pictures;
 	}
 
-	public Set<Gcomment> getGcomments() {
-		return gcomments;
+	public Set<Comment> getComments() {
+		return comments;
 	}
 
-	public void setGcomments(Set<Gcomment> gcomments) {
-		this.gcomments = gcomments;
+	public void setComments(Set<Comment> comments) {
+		this.comments = comments;
 	}
 
 	public User getUser() {

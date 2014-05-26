@@ -11,7 +11,7 @@ import com.easyhuan.pojo.User;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class UserAction extends ActionSupport {
-	private User user = new User();
+	private User user;
 
 	public User getUser() {
 		return user;
@@ -24,7 +24,7 @@ public class UserAction extends ActionSupport {
 	private PojoUtil util = new PojoUtil();
 
 	public void prepare() throws Exception {
-		
+
 	}
 
 	// 注册
