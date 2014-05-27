@@ -10,7 +10,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<base href="<%=basePath%>">
 
 <title>Document</title>
 <meta http-equiv="pragma" content="no-cache">
@@ -21,11 +20,11 @@
 <!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-<link rel="stylesheet" href="<%=basePath%>res/css/main.css">
-<link rel="stylesheet" href="<%=basePath%>res/css/lrtk.css">
-<link rel="stylesheet" href="<%=basePath%>res/css/search.css">
-<script src="<%=basePath%>res/js/jquery.js"></script>
-<script src="<%=basePath%>res/js/jdt.js"></script>
+<link rel="stylesheet" href="./res/css/main.css">
+<link rel="stylesheet" href="./res/css/lrtk.css">
+<link rel="stylesheet" href="./res/css/search.css">
+<script src="./res/js/jquery.js"></script>
+<script src="./res/js/jdt.js"></script>
 </head>
 
 <body>
@@ -34,70 +33,9 @@
 			var a = document.body;
 			window.screen.width > 1024 ? a.className = "w1190"
 					: a.className = "w990";
-			if (${ (empty sessionScope.currUser) ? false : sessionScope.currUser})
-				alert("您已退出。");
 		})();
 	</script>
-	<div class="header">
-		<div class="loginstatus">
-			<div class="banner-login">
-				<ul>
-					<c:if test="${empty sessionScope.currUser.userName }">
-						<li><a href="<%=basePath%>login.jsp">亲，请登陆</a></li>
-					</c:if>
-					<c:if test="${!empty sessionScope.currUser.userName }">
-						<li><a href="<%=basePath%>#">欢迎:${sessionScope.currUser.userName }</a></li>
-						<li><a href="<%=basePath%>./index.jsp">退出</a></li>
-					</c:if>
-					<c:if test="${empty sessionScope.currUser.userName }">
-						<li><a href="<%=basePath%>register.jsp">免费注册</a></li>
-					</c:if>
-				</ul>
-			</div>
-			<div>
-				<ul class="sddm">
-					<li><a href="#" onmouseover="mopen('m1')"
-						onmouseout="mclosetime()">我的账号</a>
-						<div id="m1" onmouseover="mcancelclosetime()"
-							onmouseout="mclosetime()">
-							<a href="#">已买商品</a> <a href="<%=basePath%>uc/publishing.jsp" target="content">我的上新</a>
-							<a href="#">我的优惠</a>
-						</div></li>
-					<li><a href="#" onmouseover="mopen('m2')"
-						onmouseout="mclosetime()">商品收藏</a>
-						<div id="m2" onmouseover="mcancelclosetime()"
-							onmouseout="mclosetime()">
-							<a href="#">卖家收藏</a> <a href="#">宝贝收藏</a>
-						</div></li>
-					<li><a href="#" onmouseover="mopen('m3')"
-						onmouseout="mclosetime()">账号信息</a></li>
-				</ul>
-			</div>
-		</div>
-
-
-
-		<!-- 		<div class="nav clear"></div> -->
-		<div class="logo">
-			<img src="<%=basePath%>img/logo.jpg" />
-		</div>
-		<div class="search">
-			<div class="header-search">
-				<div class="header-search-fields">
-					<form action="" method="get">
-						<input class="header-search-box" type="text" name="search" />
-						<button class="search-btn">搜索</button>
-					</form>
-				</div>
-			</div>
-		</div>
-		<div class="qrcode">
-			二维码微博微信区域
-			<div id="code-site">
-				<a href="#"></a>
-			</div>
-		</div>
-	</div>
+	<jsp:include page="header.jsp"/>
 	<div class="main">
 		<div class="category">
 			<div class="left">

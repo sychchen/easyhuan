@@ -4,18 +4,18 @@
 	<package name="easyhuan" extends="struts-default" namespace="/">
 		<action name="reg" class="com.easyhuan.action.UserAction"
 			method="register">
-			<result name="success">uc/usercenter.jsp</result>
-			<result name="login">index.jsp</result>
+			<result name="success">/uc/usercenter.jsp</result>
+			<result name="login">/index.jsp</result>
 		</action>
 		<action name="log" class="com.easyhuan.action.UserAction"
 			method="login">
-			<result name="success">uc/usercenter.jsp</result>
-			<result name="login">login.jsp</result>
+			<result name="success">/index.jsp</result>
+			<result name="login">/login.jsp</result>
 		</action>
 		<action name="goodspublic" class="com.easyhuan.action.GoodsAction"
 			method="newGoods">
-			<result name="success">uc/published.jsp</result>
-			<result name="republic">uc/publishing.jsp</result>
+			<result name="success">/uc/published.jsp</result>
+			<result name="republic">/uc/publishing.jsp</result>
 		</action>
 	</package>
 </struts>    
