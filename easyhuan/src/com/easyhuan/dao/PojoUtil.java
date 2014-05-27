@@ -148,7 +148,7 @@ public class PojoUtil {
 
 	// 查询语句拼接
 	public String getQueryCondition(String queryCondition) {
-		String hql = "FROM Goods WHERE goods_name LIKE ? OR ";
+//		String hql = "FROM Goods WHERE goods_name LIKE ? OR ";
 
 		return null;
 	}
